@@ -1,0 +1,109 @@
+[
+    {
+        "id":"1",
+        "primary_img":"../img/product/product9.jpg",
+        "secondary_img":"../img/product/product10.jpg",
+        "oldprice":"59$",
+        "currentprice":"49$",
+        "productname":"Samsung Phone"
+
+    },
+
+    {
+        "id":"2",
+        "primary_img":"../img/product/product9.jpg",
+        "secondary_img":"../img/product/product10.jpg",
+        "oldprice":"59$",
+        "currentprice":"49$",
+        "productname":"Samsung Phone"
+    },
+
+    {
+        "id":"3",
+        "primary_img":"../img/product/product9.jpg",
+        "secondary_img":"../img/product/product10.jpg",
+        "oldprice":"59$",
+        "currentprice":"49$",
+        "productname":"Samsung Phone"
+    },
+
+    {
+        "id":"4",
+        "primary_img":"../img/product/product9.jpg",
+        "secondary_img":"../img/product/product10.jpg",
+        "oldprice":"59$",
+        "currentprice":"49$",
+        "productname":"Samsung Phone"
+    },
+
+    {
+        "id":"5",
+        "primary_img":"../img/product/product9.jpg",
+        "secondary_img":"../img/product/product10.jpg",
+        "oldprice":"59$",
+        "currentprice":"49$",
+        "productname":"Samsung Phone"
+    },
+
+    {
+        "id":"6",
+        "primary_img":"../img/product/product9.jpg",
+        "oldprice":"59$",
+        "currentprice":"49$",
+        "productname":"Samsung Phone"
+    },
+
+    {
+        "id":"7",
+        "primary_img":"../img/product/product9.jpg",
+        "oldprice":"59$",
+        "currentprice":"49$",
+        "productname":"Samsung Phone"
+    },
+
+    {
+        "id":"8",
+        "primary_img":"../img/product/product9.jpg",
+        "oldprice":"59$",
+        "currentprice":"49$",
+        "productname":"Samsung Phone"
+    },
+
+    {
+        "id":"9",
+        "primary_img":"../img/product/product9.jpg",
+        "secondary_img":"../img/product/product10.jpg",
+        "oldprice":"59$",
+        "currentprice":"49$",
+        "productname":"Samsung Phone"
+    },
+
+    {
+        "id":"10",
+        "primary_img":"../img/product/product9.jpg",
+        "secondary_img":"../img/product/product10.jpg",
+        "oldprice":"59$",
+        "currentprice":"49$",
+        "productname":"Samsung Phone"
+    },
+
+    {
+        "id":"11",
+        "primary_img":"../img/product/product9.jpg",
+        "secondary_img":"../img/product/product10.jpg",
+        "oldprice":"59$",
+        "currentprice":"49$",
+        "productname":"Samsung Phone"
+    },
+
+    {
+        "id":"12",
+        "primary_img":"../img/product/product9.jpg",
+        "secondary_img":"../img/product/product10.jpg",
+        "oldprice":"59$",
+        "currentprice":"49$",
+        "productname":"Samsung Phone"
+    }
+
+
+]
