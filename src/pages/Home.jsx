@@ -5,7 +5,7 @@ import Product from '../components/Product'
 
 const Home = () => {
 
-    const [Products, setproducts] = useState([]);
+    const [products, setproducts] = useState([]);
 
     useEffect(() => {
 
@@ -1538,7 +1538,7 @@ const Home = () => {
                             {/* Product Components */}
                             <div className="row shop_wrapper">
 
-                                {Products.map((product) => {
+                                {products.map((product) => {
 
                                     return (
                                         <Product 
