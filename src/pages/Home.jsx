@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Product from '../components/Product'
 
 const Home = () => {
+
+    const [Products, setproducts] = useState([]);
+
+    useEffect(() => {
+
+        axios.get("./data/products.json").then(Response => {
+        setproducts(Response.data)})
+    })
+
     return (
         <>
             {/*header area start*/}
@@ -1525,20 +1535,22 @@ const Home = () => {
                             </div>
                             {/*shop toolbar end*/}
 
-
+                            {/* Product Components */}
                             <div className="row shop_wrapper">
-                                <Product />
-                                <Product />
-                                <Product />
-                                <Product />
-                                <Product />
-                                <Product />
-                                <Product />
-                                <Product />
-                                <Product />
-                                <Product />
-                                <Product />
-                                <Product />
+
+                                {Products.map((product) => {
+
+                                    return (
+                                        <Product 
+                                        primary_img={product.primary_img}
+                                        secondary_img={product.secondary_img}
+                                        oldprice={product.oldprice}
+                                        currentprice={product.currentprice}
+                                        productname={product.productname}
+                                        />
+                                    )
+                                })}
+                                
                                 {/* <div className="col-lg-4 col-md-4 col-12 ">
                                     <article className="single_product">
                                         <figure>
