@@ -11,7 +11,7 @@ const Home = () => {
 
         axios.get("./data/products.json").then(Response => {
         setproducts(Response.data)})
-    })
+    }, [])
 
     return (
         <>

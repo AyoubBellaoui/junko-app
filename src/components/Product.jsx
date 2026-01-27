@@ -84,7 +84,7 @@ function Product(props) {
                                                 </div>
                                                 <h3 className="product_name grid_name">
                                                     <a href="product-details.html">
-                                                        Condimentum posuere consectetur urna
+                                                        {props.productname}
                                                     </a>
                                                 </h3>
                                             </div>
