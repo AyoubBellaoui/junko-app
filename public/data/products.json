@@ -11,8 +11,8 @@
 
     {
         "id":"2",
-        "primary_img":"../img/product/product9.jpg",
-        "secondary_img":"../img/product/product10.jpg",
+        "primary_img":"../img/product/product3.jpg",
+        "secondary_img":"../img/product/product4.jpg",
         "oldprice":"59$",
         "currentprice":"49$",
         "productname":"Product 2"
@@ -20,8 +20,8 @@
 
     {
         "id":"3",
-        "primary_img":"../img/product/product9.jpg",
-        "secondary_img":"../img/product/product10.jpg",
+        "primary_img":"../img/product/product5.jpg",
+        "secondary_img":"../img/product/product6.jpg",
         "oldprice":"59$",
         "currentprice":"49$",
         "productname":"Product 3"
@@ -29,8 +29,8 @@
 
     {
         "id":"4",
-        "primary_img":"../img/product/product9.jpg",
-        "secondary_img":"../img/product/product10.jpg",
+        "primary_img":"../img/product/product7.jpg",
+        "secondary_img":"../img/product/product8.jpg",
         "oldprice":"59$",
         "currentprice":"49$",
         "productname":"Product 4"
@@ -47,7 +47,8 @@
 
     {
         "id":"6",
-        "primary_img":"../img/product/product9.jpg",
+        "primary_img":"../img/product/product11.jpg",
+        "secondary_img":"../img/product/product12.jpg",
         "oldprice":"59$",
         "currentprice":"49$",
         "productname":"Product 6"
@@ -55,7 +56,8 @@
 
     {
         "id":"7",
-        "primary_img":"../img/product/product9.jpg",
+        "primary_img":"../img/product/product13.jpg",
+        "secondary_img":"../img/product/product14.jpg",
         "oldprice":"59$",
         "currentprice":"49$",
         "productname":"Product 7"
@@ -63,7 +65,8 @@
 
     {
         "id":"8",
-        "primary_img":"../img/product/product9.jpg",
+        "primary_img":"../img/product/product15.jpg",
+        "secondary_img":"../img/product/product16.jpg",
         "oldprice":"59$",
         "currentprice":"49$",
         "productname":"Product 8"
@@ -71,8 +74,8 @@
 
     {
         "id":"9",
-        "primary_img":"../img/product/product9.jpg",
-        "secondary_img":"../img/product/product10.jpg",
+        "primary_img":"../img/product/product17.jpg",
+        "secondary_img":"../img/product/product18.jpg",
         "oldprice":"59$",
         "currentprice":"49$",
         "productname":"Product 9"
@@ -80,8 +83,8 @@
 
     {
         "id":"10",
-        "primary_img":"../img/product/product9.jpg",
-        "secondary_img":"../img/product/product10.jpg",
+        "primary_img":"../img/product/product19.jpg",
+        "secondary_img":"../img/product/product20.jpg",
         "oldprice":"59$",
         "currentprice":"49$",
         "productname":"Product 10"
