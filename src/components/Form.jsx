@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const Form = () => {
 
@@ -11,8 +12,6 @@ const Form = () => {
     // const [primaryImage, setPrimaryImage] = useState("");
 
     // const [secondaryImage, setSecondaryImage] = useState("");
-
-
 
 
     const styles = {
@@ -35,7 +34,7 @@ const Form = () => {
         },
 
         header: {
-            backgroundColor: "#111",
+            backgroundColor: "#1b10d9",
             color: "#fff",
             padding: "16px",
             textAlign: "center",
@@ -78,13 +77,14 @@ const Form = () => {
             padding: "12px",
             borderRadius: "10px",
             border: "none",
-            backgroundColor: "#111",
+            backgroundColor: "#1b10d9",
             color: "#fff",
             fontSize: "16px",
             fontWeight: "600",
             cursor: "pointer",
         },
     };
+
 
     const nameHandler = (e) => {
 
@@ -111,25 +111,30 @@ const Form = () => {
     //     setSecondaryImage(e.target.value)
     // } 
 
-    const formHandler = (e) => {
 
+    const formHandler = async (e) => {
         e.preventDefault();
 
-        let formData = {
-            "name" : productName,
-            "oldPrice" : oldPrice,
-            "currentPrice" : currentPrice
+        const formData = {
+            name: productName,
+            oldPrice: oldPrice,
+            currentPrice: currentPrice
+        };
+
+        try {
+            const response = await axios.post("http://127.0.0.1:8000/api/products", formData);
+            console.log("Saved product:", response.data);
+            alert("Product added successfully!");
+
+            // Reset form
+            setProductName("");
+            setOldPrice("");
+            setCurrentPrice("");
+        } catch (error) {
+            console.error("Error:", error);
+            alert("Error saving product: " + (error.response?.data?.message || error.message));
         }
-
-        console.log(formData);
-
-
-        
-    }
-
-
-
-    
+    };
 
     return (
         <div style={styles.page}>
@@ -140,47 +145,41 @@ const Form = () => {
                     <form onSubmit={formHandler}>
                         <label style={styles.label}>Product Name</label>
                         <input
-                        onChange={nameHandler}
+                            onChange={(e) => setProductName(e.target.value)}
+                            value={productName}
                             type="text"
                             placeholder="Enter product name"
                             style={styles.input}
+                            required
                         />
 
                         <div style={styles.row}>
                             <div style={styles.col}>
                                 <label style={styles.label}>Old Price</label>
                                 <input
-                                onChange={oldPriceHandler}
+                                    onChange={(e) => setOldPrice(e.target.value)}
+                                    value={oldPrice}
                                     type="number"
+                                    step="0.01"
                                     placeholder="0.00"
                                     style={styles.input}
+                                    required
                                 />
                             </div>
 
                             <div style={styles.col}>
                                 <label style={styles.label}>Current Price</label>
                                 <input
-                                onChange={currentPriceHandler}
+                                    onChange={(e) => setCurrentPrice(e.target.value)}
+                                    value={currentPrice}
                                     type="number"
+                                    step="0.01"
                                     placeholder="0.00"
                                     style={styles.input}
+                                    required
                                 />
                             </div>
                         </div>
-
-                        {/* <label style={styles.label}>Primary Image</label>
-                        <input 
-                        onChange={primaryImageHandler}
-                        type="file" 
-                        style={styles.input} 
-                        /> */}
-
-                        {/* <label style={styles.label}>Secondary Image</label>
-                        <input 
-                        onChange={secondaryImageHandler}
-                        type="file" 
-                        style={styles.input} 
-                        /> */}
 
                         <button type="submit" style={styles.button}>
                             Submit Product
