@@ -9,9 +9,21 @@ const Home = () => {
 
     useEffect(() => {
 
-        axios.get("./data/products.json").then(Response => {
+        axios.get("http://127.0.0.1:8000/api/products").then(Response => {
+
         setproducts(Response.data)})
     }, [])
+
+    // view single product
+    const [productDetails, setProductDetails] = useState({});
+
+    useEffect(() => {
+
+        axios.get("http://127.0.0.1:8000/api/products/id").then(Response => {
+
+        setProductDetails(Response.data)})
+
+    }, []) 
 
     return (
         <>
@@ -1542,8 +1554,9 @@ const Home = () => {
 
                                     return (
                                         <Product 
-                                        primary_img={product.primary_img}
-                                        secondary_img={product.secondary_img}
+                                        id={product.id}
+                                        primary_img={product.primary_image}
+                                        secondary_img={product.secondary_image}
                                         oldprice={product.oldprice}
                                         currentprice={product.currentprice}
                                         productname={product.productname}

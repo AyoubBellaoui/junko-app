@@ -9,9 +9,9 @@ const Form = () => {
 
     const [currentPrice, setCurrentPrice] = useState("");
 
-    // const [primaryImage, setPrimaryImage] = useState("");
+    const [primaryImage, setPrimaryImage] = useState("");
 
-    // const [secondaryImage, setSecondaryImage] = useState("");
+    const [secondaryImage, setSecondaryImage] = useState("");
 
 
     const styles = {
@@ -63,6 +63,17 @@ const Form = () => {
             outline: "none",
         },
 
+        fileInput: {
+            width: "100%",
+            padding: "10px 12px",
+            borderRadius: "8px",
+            border: "1px solid #ccc",
+            marginBottom: "16px",
+            fontSize: "14px",
+            outline: "none",
+            cursor: "pointer",
+        },
+
         row: {
             display: "flex",
             gap: "12px",
@@ -86,43 +97,26 @@ const Form = () => {
     };
 
 
-    const nameHandler = (e) => {
-
-        setProductName(e.target.value)
-    }
-
-    const oldPriceHandler = (e) => {
-
-        setOldPrice(e.target.value)
-    }
-
-    const currentPriceHandler = (e) => {
-
-        setCurrentPrice(e.target.value)
-    } 
-
-    // const primaryImageHandler = (e) => {
-
-    //     setPrimaryImage(e.target.value)
-    // } 
-
-    // const secondaryImageHandler = (e) => {
-
-    //     setSecondaryImage(e.target.value)
-    // } 
-
-
     const formHandler = async (e) => {
         e.preventDefault();
 
         const formData = {
             name: productName,
             oldPrice: oldPrice,
-            currentPrice: currentPrice
+            currentPrice: currentPrice,
+            primaryImage: primaryImage,
+            secondaryImage: secondaryImage
         };
 
+
         try {
-            const response = await axios.post("http://127.0.0.1:8000/api/products", formData);
+            const response = await axios.post(
+                "http://127.0.0.1:8000/api/products", 
+                formData,
+                {
+                    headers: {
+                    'Content-Type': 'multipart/form-data'}
+                })
             console.log("Saved product:", response.data);
             alert("Product added successfully!");
 
@@ -130,6 +124,9 @@ const Form = () => {
             setProductName("");
             setOldPrice("");
             setCurrentPrice("");
+            setPrimaryImage("");
+            setSecondaryImage("");
+
         } catch (error) {
             console.error("Error:", error);
             alert("Error saving product: " + (error.response?.data?.message || error.message));
@@ -146,7 +143,6 @@ const Form = () => {
                         <label style={styles.label}>Product Name</label>
                         <input
                             onChange={(e) => setProductName(e.target.value)}
-                            value={productName}
                             type="text"
                             placeholder="Enter product name"
                             style={styles.input}
@@ -158,7 +154,6 @@ const Form = () => {
                                 <label style={styles.label}>Old Price</label>
                                 <input
                                     onChange={(e) => setOldPrice(e.target.value)}
-                                    value={oldPrice}
                                     type="number"
                                     step="0.01"
                                     placeholder="0.00"
@@ -171,12 +166,40 @@ const Form = () => {
                                 <label style={styles.label}>Current Price</label>
                                 <input
                                     onChange={(e) => setCurrentPrice(e.target.value)}
-                                    value={currentPrice}
                                     type="number"
                                     step="0.01"
                                     placeholder="0.00"
                                     style={styles.input}
                                     required
+                                />
+                            </div>
+                        </div>
+
+                        <div style={styles.row}>
+                            <div style={styles.col}>
+                                <label style={styles.label}>Primary Image</label>
+                                <input
+                                    onChange={
+                                        (e) => { setPrimaryImage(e.target.files[0])}
+                                    }
+                                    name="primary_img"
+                                    type="file"
+                                    accept="image/*"
+                                    style={styles.fileInput}
+                                />
+                            </div>
+
+                            <div style={styles.col}>
+                                <label style={styles.label}>Secondary Image</label>
+                                <input
+                                    onChange={
+                                        (e) => { setSecondaryImage(e.target.files[0])
+                                    console.dir("this is the sec image path " + e);}
+                                    }
+                                    name="secondary_img"
+                                    type="file"
+                                    accept="image/*"
+                                    style={styles.fileInput}
                                 />
                             </div>
                         </div>

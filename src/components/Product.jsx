@@ -1,7 +1,20 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect } from 'react'
 
 function Product(props) {
-    return (
+
+    // view single product
+    const [productDetails, setProductDetails] = useState({});
+
+    useEffect(() => {
+
+        axios.get("http://127.0.0.1:8000/api/products/id").then(Response => {
+
+        setProductDetails(Response.data)})
+
+    }, [])
+
+    return ( 
 
         <>
             <div className="col-lg-4 col-md-4 col-12 ">
@@ -9,10 +22,10 @@ function Product(props) {
                                         <figure>
                                             <div className="product_thumb">
                                                 <a className="primary_img" href="product-details.html">
-                                                    <img src={props.primary_img} alt="" />
+                                                    <img src={`http://127.0.0.1:8000/storage/`+ props.primary_img} alt="" />
                                                 </a>
                                                 <a className="secondary_img" href="product-details.html">
-                                                    <img src={props.secondary_img} alt="" />
+                                                    <img src={`http://127.0.0.1:8000/storage/` + props.secondary_img} alt="" />
                                                 </a>
                                                 <div className="label_product">
                                                     <span className="label_sale">sale</span>
@@ -43,8 +56,8 @@ function Product(props) {
                                                     </ul>
                                                 </div>
                                                 <div className="add_to_cart">
-                                                    <a href="cart.html" title="add to cart">
-                                                        Add to cart
+                                                    <a href={`/viewproduct/` + props.id} title="view details">
+                                                        view details
                                                     </a>
                                                 </div>
                                             </div>
@@ -140,8 +153,8 @@ function Product(props) {
                                                 </div>
                                                 <div className="right_caption">
                                                     <div className="add_to_cart">
-                                                        <a href="cart.html" title="add to cart">
-                                                            Add to cart
+                                                        <a href="cart.html" title="view details">
+                                                            view details
                                                         </a>
                                                     </div>
                                                     <div className="action_links">
